@@ -1,8 +1,11 @@
+const R2_VIDEO_BASE = 'https://pub-ad9fb4da42554181962318b31aa70fe2.r2.dev/assets/video/';
+const videoUrl = filename => `${R2_VIDEO_BASE}${encodeURIComponent(filename)}`;
+
 const projects = {
   moon: {
     title: 'MOON ILLUSTRATED', year: '2026', format: 'MIXED-MEDIA FILM', runtime: '00:33',
     image: './assets/images/moon-illustrated.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/moon-illustrated.mp4', poster: './assets/images/moon-illustrated.jpg', runtime: '00:33' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('moon-illustrated.mp4'), poster: './assets/images/moon-illustrated.jpg', runtime: '00:33' }],
     description: 'I do not often get to make a project with my brother, so I knew I had to make this one count. It was my first major attempt at mixed-media and hand-drawn techniques, and it took a lot of planning, scheduling, and separate stages to finish. The process took forever, but every bit of that time paid off. I especially enjoyed lighting the piano and guitar scenes, and this is probably the most visually impressive project I have made so far.'
   },
   'three-truths': {
@@ -10,8 +13,8 @@ const projects = {
     image: './assets/images/projects/three-truths-and-a-lie-poster.jpg',
     defaultMedia: 'trailer',
     media: [
-      { id: 'trailer', label: 'TRAILER', src: './assets/video/Three Truths and a Lie Trailer.mp4', poster: './assets/images/projects/three-truths-and-a-lie-poster.jpg', runtime: '00:27' },
-      { id: 'film', label: 'FULL FILM', src: './assets/video/ThreeTruthsAndALie Film.mov', poster: './assets/images/projects/three-truths-and-a-lie-poster.jpg', runtime: '06:04' }
+      { id: 'trailer', label: 'TRAILER', src: videoUrl('Three Truths and a Lie Trailer.mp4'), poster: './assets/images/projects/three-truths-and-a-lie-poster.jpg', runtime: '00:27' },
+      { id: 'film', label: 'FULL FILM', src: videoUrl('ThreeTruthsAndALie Film.mov'), poster: './assets/images/projects/three-truths-and-a-lie-poster.jpg', runtime: '06:04' }
     ],
     description: 'Directed by Jennifer Zhu, this was the biggest project I had worked on. Ryan Fong and I brought the story visually to life as co-directors of photography. I put everything into the storyboard and shot list, three days on set, and countless hours of editing so the finished film matched what I had imagined. The restaurant scenes remain my favourite because of the work, pressure, and difficult external environment behind them. More than anything, the project taught me how to make a film within a much larger team.'
   },
@@ -20,8 +23,8 @@ const projects = {
     image: './assets/images/psychosis-overlay.jpg',
     defaultMedia: 'trailer',
     media: [
-      { id: 'trailer', label: 'TRAILER', src: './assets/video/PSYCHOSIS FINAL TRAILER.mp4', poster: './assets/images/psychosis/trailer-poster.png', runtime: '00:41' },
-      { id: 'film', label: 'FULL FILM', src: './assets/video/PSYCHOSIS_FINAL_web.mp4', poster: './assets/images/psychosis/full-film-poster.png', runtime: '05:04' }
+      { id: 'trailer', label: 'TRAILER', src: videoUrl('PSYCHOSIS FINAL TRAILER.mp4'), poster: './assets/images/psychosis/trailer-poster.png', runtime: '00:41' },
+      { id: 'film', label: 'FULL FILM', src: videoUrl('PSYCHOSIS_FINAL_web.mp4'), poster: './assets/images/psychosis/full-film-poster.png', runtime: '05:04' }
     ],
     description: 'This was my first actual short film, and my team ran into plenty of issues that my co-director Ryan Fong and I had to solve ourselves. I am grateful it happened that way because working through those problems taught me more than any previous video project: directing, compositing, editing, sound design, storyboarding, and especially gaffing. Seeing the storyboard become a real film made this feel like my first true step from videography into filmmaking. I carried those lessons directly into the much larger short film that followed.'
   },
@@ -38,73 +41,73 @@ const projects = {
   'first-year': {
     title: 'MY FIRST FULL YEAR AS A FILMMAKER', year: '2026', format: '2025 SHOWREEL', runtime: '00:08',
     image: './assets/images/projects/showreel-2025.jpg',
-    media: [{ id: 'showreel', label: 'SHOWREEL', src: './assets/video/2025 Chadvids Showreel final_1.mp4', poster: './assets/images/projects/showreel-2025.jpg', runtime: '00:49' }],
+    media: [{ id: 'showreel', label: 'SHOWREEL', src: videoUrl('showreel-2025.mp4'), poster: './assets/images/projects/showreel-2025.jpg', runtime: '00:49' }],
     description: 'Man... it has been a full year already? Looking back, 2025 was a year of taking whatever opportunities appeared, messing up, and learning a ton from every attempt. I picked up new skills, met so many like-minded people, and came away with an even stronger passion for filmmaking. I could not ask for much more from my first full year, and I am excited to see where that momentum takes me in 2026.'
   },
   badminton: {
     title: 'CINEMATIC BADMINTON', year: '2025', format: 'SPORT / VISUAL EFFECTS', runtime: '00:50', role: 'DIRECTOR',
     image: './assets/images/projects/cinematic-badminton.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/cinematic-badminton.mp4', poster: './assets/images/projects/cinematic-badminton.jpg', runtime: '00:50' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('cinematic-badminton.mp4'), poster: './assets/images/projects/cinematic-badminton.jpg', runtime: '00:50' }],
     description: 'Badminton has been one of my biggest passions since I was a kid, so getting to direct and film my friends and me playing in a tournament was a no-brainer. It gave me the chance to combine two things I genuinely love. I spent a lot of time learning combinations of effects for the edit, and some individual frames took way, way too long. But that was also the point: pushing through those difficult frames was how I learned.'
   },
   toronto: {
     title: 'TORONTO?', year: '2025', format: 'TRAVEL FILM / MONTREAL', runtime: '00:49',
     image: './assets/images/projects/toronto.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/toronto-film.mp4', poster: './assets/images/projects/toronto.jpg', runtime: '00:49' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('toronto-film.mp4'), poster: './assets/images/projects/toronto.jpg', runtime: '00:49' }],
     description: 'This came from my first trip to Montreal with friends, where I overshot practically everything I passed because it was all new to me. I planned the video before arriving, then called it “Toronto?” because the journey begins there and because Montreal looked surprisingly familiar once I arrived. I loved the final flow and used the edit to experiment much more with sound effects. It took longer than most of my videos, but the response it received on social media made that time feel worthwhile.'
   },
   enki: {
     title: "ENKI'S WARNING", year: '2025', format: 'UNIVERSITY SHORT FILM', runtime: '00:54', role: 'DIRECTOR',
     image: './assets/images/projects/enkis-warning.jpg',
-    media: [{ id: 'film', label: 'FILM', src: "./assets/video/Enki's Warning - Chadwin.mp4", poster: './assets/images/projects/enkis-warning.jpg', runtime: '00:54' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl("Enki's Warning - Chadwin.mp4"), poster: './assets/images/projects/enkis-warning.jpg', runtime: '00:54' }],
     description: 'For a university Mesopotamian Myth course, I had to create an art project that represented a story. I used that assignment as an opportunity to recreate the Sumerian myth of the “Atrahasis Flood” as a short film. Directing the entire project by myself pushed me into many things I had never done before, and I learned a huge amount from having to carry the film all the way through on my own.'
   },
   'good-old-days': {
     title: 'THE GOOD OLD DAYS ARE GONE', year: '2024', format: 'CAPTIVATE SUBMISSION', runtime: '01:04',
     image: './assets/images/projects/good-old-days.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/The Good Old Days Are Gone.mp4', poster: './assets/images/projects/good-old-days.jpg', runtime: '01:04' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('The Good Old Days Are Gone.mp4'), poster: './assets/images/projects/good-old-days.jpg', runtime: '01:04' }],
     description: "I shot this on my old Panasonic Lumix FZ300 for UTSC Captivate 2024's Storytelling Competition. The idea came from realizing that I had been living in the past so much that it was stopping me from enjoying the present. That personal feeling became the central message of the film: the good old days may be gone, but constantly looking backward can make you miss the life that is still happening now."
   },
   'blue-mountain': {
     title: 'BLUE MOUNTAIN CLIMB', year: '2025', format: 'TRAVEL FILM', runtime: '00:35',
     image: './assets/images/projects/blue-mountain.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/Blue Mountain Climb - Tek It.mp4', poster: './assets/images/projects/blue-mountain.jpg', runtime: '00:35' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('Blue Mountain Climb - Tek It.mp4'), poster: './assets/images/projects/blue-mountain.jpg', runtime: '00:35' }],
     description: 'I decided to climb Blue Mountain, so bringing a camera along felt obvious. It became one of my most enjoyable experiences, combining the climb with beautiful views and shots I was excited to find along the way. Even though the event itself was small, I spent a lot of time shaping the edit in the style I enjoy most. It remains one of my favourite videos and marked one year since I first picked up a camera with the intention of making films.'
   },
   'final-days': {
     title: 'FINAL DAYS OF 2024', year: '2024', format: 'MEMORY FILM', runtime: '00:56',
     image: './assets/images/projects/final-days-2024.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/bored, end of 2024 vid.mp4', poster: './assets/images/projects/final-days-2024.jpg', runtime: '00:56' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('bored, end of 2024 vid.mp4'), poster: './assets/images/projects/final-days-2024.jpg', runtime: '00:56' }],
     description: 'I filmed the final days of 2024 purely to preserve memories while testing shot angles and effects I had never tried before. It was also the first video I shot on the Sony FX30 after saving for the camera. That combination of a personal moment, a new tool, and the freedom to experiment made the project especially meaningful to me. It became my favourite video at the time and an important marker of how I wanted my work to feel.'
   },
   'first-videography': {
     title: 'MY FIRST VIDEOGRAPHY PROJECT', year: '2024', format: 'PERSONAL FILM', runtime: '00:40',
     image: './assets/images/projects/first-videography.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/My First Videography Project.mp4', poster: './assets/images/projects/first-videography.jpg', runtime: '00:40' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('My First Videography Project.mp4'), poster: './assets/images/projects/first-videography.jpg', runtime: '00:40' }],
     description: 'This began as a typical summer day, but it was also the first time I used a camera with the clear intention of turning the footage into a video afterward. Making it brought back my love of content creation and video editing. More importantly, it sparked the drive that pushed me toward videography and the film projects that followed.'
   },
   'no-surprises': {
     title: 'NO SURPRISES', year: '2024', format: 'COTTAGE TRIP FILM', runtime: '00:39',
     image: './assets/images/projects/no-surprises.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/No Surprises - Cottage Trip.mp4', poster: './assets/images/projects/no-surprises.jpg', runtime: '00:39' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('No Surprises - Cottage Trip.mp4'), poster: './assets/images/projects/no-surprises.jpg', runtime: '00:39' }],
     description: 'I made this recap during a cottage trip with my family, shortly after completing My First Videography Project. It gave me another chance to experiment with unfamiliar angles and camera techniques. The contrast between the happy memories and the much grimmer feeling of the song still feels slightly unsettling to me, but that tension is also what makes the piece memorable as an early experiment.'
   },
   'listening-mac': {
     title: 'LISTENING TO MAC DEMARCO FEELS LIKE', year: '2025', format: 'CINEMATOGRAPHY STUDY', runtime: '00:21', role: 'CINEMATOGRAPHER',
     image: './assets/images/projects/listening-mac.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/listening to mac demarco feels like.mp4', poster: './assets/images/projects/listening-mac.jpg', runtime: '00:21' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('listening to mac demarco feels like.mp4'), poster: './assets/images/projects/listening-mac.jpg', runtime: '00:21' }],
     description: 'I made this with one of the first filmmakers I met at UTSC. It was part of my effort to move from simply recording events toward cinematography, directing how I wanted each shot to look. I experimented with more deliberate lighting and new visual effects, and I especially liked the outro. The final piece came close to what I had imagined during pre-production.'
   },
   'utsc-bball': {
     title: 'UTSC VS. UTM BBALL SEMIFINALS', year: '2025', format: 'SPORTS RECAP', runtime: '00:29', role: 'CAMERA / EDIT',
     image: './assets/images/projects/utsc-bball.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/utsc-vs-utm-bball-semifinals.mp4', poster: './assets/images/projects/utsc-bball.jpg', runtime: '00:29' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('utsc-vs-utm-bball-semifinals.mp4'), poster: './assets/images/projects/utsc-bball.jpg', runtime: '00:29' }],
     description: 'By this project I was starting to understand how to film fast-paced events and capture the shots I actually wanted. Editing basketball footage that I had filmed myself felt surreal because I had spent years editing NBA clips sourced from YouTube. The assignment connected that earlier editing practice with the real event coverage I was beginning to create on my own.'
   },
   convocation: {
     title: "SO WHAT'S NEXT? UOFT CONVOCATION", year: '2025', format: 'UNIVERSITY / CORPORATE FILM', runtime: '01:09', role: 'VIDEOGRAPHER / EDITOR',
     image: './assets/images/projects/convocation.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/uoft-convocation.mp4', poster: './assets/images/projects/convocation.jpg', runtime: '01:09' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('uoft-convocation.mp4'), poster: './assets/images/projects/convocation.jpg', runtime: '01:09' }],
     description: 'Filming convocation gave me the chance to capture a wide range of emotions and responses in a setting that was more corporate than my personal work, but still genuinely fun. The project involved many revisions and taught me a great deal about that kind of production workflow. I am especially grateful to Lisa for being patient with me on my first video project working at U of T.'
   },
   'movies-uoft': {
@@ -116,7 +119,7 @@ const projects = {
   'cinematic-studying': {
     title: 'CINEMATIC STUDYING', year: '2025', format: 'IMPROMPTU VIDEOGRAPHY', runtime: '00:33',
     image: './assets/images/projects/cinematic-studying.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/cinematic studying.mp4', poster: './assets/images/projects/cinematic-studying.jpg', runtime: '00:33' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('cinematic studying.mp4'), poster: './assets/images/projects/cinematic-studying.jpg', runtime: '00:33' }],
     description: 'This came from a random day studying downtown with a friend when I suddenly wanted to practise videography. There was no plan or pre-production, and it became one of the fastest videos I had made. I still liked it a lot because it was created completely on the go. It was a small project made for the simple enjoyment of filming and editing.'
   },
   'syzygy-market': {
@@ -127,7 +130,7 @@ const projects = {
   'syzygy-ai': {
     title: 'SYZYGY AI TOOLS WORKSHOP', year: '2025', format: 'EVENT RECAP', runtime: '00:36',
     image: './assets/images/projects/syzygy-ai.jpg',
-    media: [{ id: 'film', label: 'FILM', src: './assets/video/sizigi ai workshop recap.mp4', poster: './assets/images/projects/syzygy-ai.jpg', runtime: '00:36' }],
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('sizigi ai workshop recap.mp4'), poster: './assets/images/projects/syzygy-ai.jpg', runtime: '00:36' }],
     description: 'This recap covered SYZYGY’s AI Tools Workshop with a professor and student guest speaker. It was a difficult event to film because the room had extremely low light, but that limitation pushed me to experiment with new approaches. I also liked the final flow of the video, and the project gave me more experience finding workable images in conditions that were far from ideal.'
   }
 };
