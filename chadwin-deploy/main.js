@@ -39,9 +39,9 @@ const projects = {
     description: 'This is the full UTSC 2024–2025 athletics documentary that my coworker and mentor Kumaran and I co-led. Kumaran handled most of the post-production, while we shared major responsibilities across interviews, regular-season filming, pre-production, and the vision for the story. It was a major learning curve, from presenting our direction to executives to preparing interview questions for coaches and players. I later handled post-production for the faster social cut, which is included here as the campaign version rather than a separate project.'
   },
   'first-year': {
-    title: 'MY FIRST FULL YEAR AS A FILMMAKER', year: '2026', format: '2025 SHOWREEL', runtime: '00:08',
+    title: 'MY FIRST FULL YEAR AS A FILMMAKER', year: '2026', format: '2025 SHOWREEL', runtime: '00:49',
     image: './assets/images/projects/showreel-2025.jpg',
-    media: [{ id: 'showreel', label: 'SHOWREEL', src: videoUrl('showreel-2025.mp4'), poster: './assets/images/projects/showreel-2025.jpg', runtime: '00:49' }],
+    media: [{ id: 'showreel', label: 'SHOWREEL', src: videoUrl('2025 Chadvids Showreel final_1.mp4'), poster: './assets/images/projects/showreel-2025.jpg', runtime: '00:49' }],
     description: 'Man... it has been a full year already? Looking back, 2025 was a year of taking whatever opportunities appeared, messing up, and learning a ton from every attempt. I picked up new skills, met so many like-minded people, and came away with an even stronger passion for filmmaking. I could not ask for much more from my first full year, and I am excited to see where that momentum takes me in 2026.'
   },
   badminton: {
