@@ -514,6 +514,58 @@ footer>p{line-height:1.7;letter-spacing:.1em;color:rgba(185,199,223,.62)}
   .statement .collage>span{top:calc(4% + 8px)}
 }
 
+/* Homepage hero: stable optical depth using the intact master photograph */
+.hero-image.reveal.is-optical-depth{
+  animation:heroDepthFrameIn 1.2s var(--ease) .16s both!important;
+  transform:none!important;
+  overflow:hidden;
+  contain:layout paint;
+  isolation:isolate;
+}
+.hero-image.is-optical-depth:after{display:none}
+.hero-camera{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  transform-origin:50% 54%;
+  transform:translate3d(var(--camera-x,0px),calc(var(--camera-y,0px) + var(--camera-scroll,0px)),0) scale(var(--camera-scale,1.06));
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.hero-camera img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:50% 70%;
+  opacity:calc(1 - (var(--hero-progress,0) * .42));
+  filter:brightness(calc(.96 - (var(--hero-progress,0) * .28))) contrast(1.05) saturate(.84);
+  transform:none!important;
+  backface-visibility:hidden;
+}
+.hero-orbit.is-cinematic-depth{
+  animation:none!important;
+  transform:translate3d(var(--orbit-x,0px),calc(var(--orbit-y,0px) + var(--orbit-scroll,0px)),0) rotate(var(--orbit-rotate,0deg));
+  will-change:transform;
+}
+@keyframes heroDepthFrameIn{
+  0%{opacity:0;filter:saturate(.68) contrast(1.025) brightness(.84)}
+  100%{opacity:1;filter:saturate(.84) contrast(1.035) brightness(1)}
+}
+
+@media (max-width:600px){
+  .hero-camera img{object-position:25% 70%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-image.is-optical-depth{transform:none!important}
+  .hero-camera,
+  .hero-orbit.is-cinematic-depth{transform:none!important;will-change:auto}
+}
+
 .work.archive-in-view .work-cosmos:before{animation:cosmicAmbientDrift 46s linear infinite alternate}
 @media(prefers-reduced-motion:reduce){.work.archive-in-view .work-cosmos:before{animation:none!important}}
 
@@ -1503,4 +1555,46 @@ footer>p{line-height:1.7;letter-spacing:.1em;color:rgba(185,199,223,.62)}
   .statement .collage:before{top:calc(18% + 9px)}
   .statement .collage:after{bottom:calc(6% + 9px)}
   .statement .collage>span{top:calc(4% + 8px)}
+}
+
+/* Hero exposure correction — retain the approved optical-depth motion */
+.hero-image.is-optical-depth{
+  filter:saturate(.84) contrast(1.035) brightness(1);
+}
+.hero-image.is-optical-depth .hero-camera img{
+  filter:brightness(calc(1.08 - (var(--hero-progress,0) * .16))) contrast(1.02) saturate(.9);
+}
+.hero-image.is-optical-depth:before{
+  background:
+    linear-gradient(90deg,rgba(1,3,8,.5) 0%,rgba(2,6,13,.27) 14%,rgba(3,8,16,.08) 30%,transparent 43%,transparent 76%,rgba(2,5,12,.12) 100%),
+    linear-gradient(180deg,rgba(4,10,20,.05),transparent 56%,rgba(2,5,11,.2));
+  background-size:100% 100%;
+  background-blend-mode:normal;
+  opacity:1;
+}
+.hero:after{
+  background:
+    linear-gradient(90deg,rgba(1,3,8,.32) 0%,rgba(1,4,10,.12) 18%,transparent 34%,transparent 87%,rgba(1,4,10,.1) 100%),
+    linear-gradient(180deg,rgba(2,5,11,.05),transparent 59%,rgba(1,3,8,.21)),
+    radial-gradient(ellipse at center,transparent 63%,rgba(0,2,7,.12) 100%);
+  box-shadow:
+    inset 0 calc(-8vh * var(--hero-progress,0)) calc(24vh * var(--hero-progress,0)) rgba(2,5,13,.72),
+    inset 0 0 90px rgba(0,2,8,.1);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-image.is-optical-depth{filter:saturate(.84) contrast(1.035) brightness(1)!important}
+  .hero-image.is-optical-depth .hero-camera img{filter:brightness(1.08) contrast(1.02) saturate(.9)!important}
+}
+
+/* Hero → Approach transition: dissolve the photograph into Section 02's #02050b. */
+.hero-image.is-optical-depth:before{
+  background:
+    linear-gradient(90deg,rgba(1,3,8,.5) 0%,rgba(2,6,13,.27) 14%,rgba(3,8,16,.08) 30%,transparent 43%,transparent 76%,rgba(2,5,12,.12) 100%),
+    linear-gradient(180deg,rgba(4,10,20,.05),transparent 56%,rgba(2,5,11,.2)),
+    linear-gradient(180deg,transparent 82%,rgba(2,5,11,.13) 86%,rgba(2,5,11,.58) 94%,#02050b 100%);
+}
+.statement-label{transform:translateY(20px)}
+.statement-label.in-view{transform:none}
+@media (prefers-reduced-motion:reduce){
+  .statement-label{opacity:1!important;transform:none!important;transition:none!important}
 }
