@@ -159,7 +159,7 @@ const detail = document.querySelector('.work-detail');
 const detailTitle = detail.querySelector('h3');
 const detailIndex = detail.querySelector('.detail-index');
 const description = detail.querySelector('.detail-description');
-let activeProjectId = 'business-and-film';
+let activeProjectId = 'moon';
 let pendingProjectId = activeProjectId;
 let activeMedia = 'film';
 let mediaTimer;
@@ -331,7 +331,7 @@ video.addEventListener('ended', () => {
   playButton.hidden = false;
 });
 
-renderProject('business-and-film', 0, false);
+renderProject('moon', 0, false);
 
 const menuButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.mobile-menu');
