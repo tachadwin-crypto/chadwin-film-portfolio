@@ -138,6 +138,12 @@ const projects = {
     image: './assets/images/projects/business-with-film.jpg',
     media: [{ id: 'film', label: 'FILM', src: videoUrl('business-with-film-web-4k.mp4'), poster: './assets/images/projects/business-with-film.jpg', runtime: '01:20' }],
     description: 'This video explores where I currently find myself as a business student with a growing passion for filmmaking, and how I’m learning to balance those two sides of my life. Originally created for my BM2514 Digital Marketing class, it also became one of the most personal videos I’ve made, and probably the most I’ve ever put myself in front of the camera. I’m hoping it marks the beginning of sharing more than just my finished work, whether that’s behind-the-scenes content, documenting my filmmaking journey, or creating educational videos and tutorials. Becoming more comfortable on camera opens up a completely new side of content creation for me, and hopefully gives me a way to share more consistently while bringing people along for the process.'
+  },
+  'schooled-up': {
+    title: 'EVERYTHING IS DUE.', year: 'OCTOBER 2026', format: 'SPEC COMMERCIAL / ADVERTISEMENT', runtime: '02:17', role: 'DIRECTOR / CINEMATOGRAPHER / EDITOR / SOUND DESIGN',
+    image: './assets/images/projects/schooled-up.jpg',
+    media: [{ id: 'film', label: 'FILM', src: videoUrl('Schooled-up spec ad - web-4k-under250mb.mp4'), poster: './assets/images/projects/schooled-up.jpg', runtime: '02:17' }],
+    description: `This was my first commercial project, and also my first time experimenting with first-person cinematography. Since the entire video unfolds from a first-person perspective (with me actually playing the character behind the camera), I wanted the audience to feel like they were experiencing everything themselves. Sound design became a huge part of making that immersion work. I spent a lot of time experimenting with reverb, spatial effects, and environmental audio to make every sound feel like it belonged in the same world.\n\nThis project was also probably one of my biggest turnarounds in post-production. After seeing how the shoot went and reviewing the raw footage, I honestly wasn't very confident in how the final video would turn out. But through editing, sound design, and a lot of creative problem-solving, I managed to bring the original vision back to life. Overall, it was an incredibly fun project to plan, experiment with, and finally see come together months after the initial idea.`
   }
 };
 
@@ -159,7 +165,7 @@ const detail = document.querySelector('.work-detail');
 const detailTitle = detail.querySelector('h3');
 const detailIndex = detail.querySelector('.detail-index');
 const description = detail.querySelector('.detail-description');
-let activeProjectId = 'moon';
+let activeProjectId = 'schooled-up';
 let pendingProjectId = activeProjectId;
 let activeMedia = 'film';
 let mediaTimer;
@@ -331,7 +337,7 @@ video.addEventListener('ended', () => {
   playButton.hidden = false;
 });
 
-renderProject('moon', 0, false);
+renderProject('schooled-up', 0, false);
 
 const menuButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.mobile-menu');
