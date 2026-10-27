@@ -1557,6 +1557,81 @@ footer>p{line-height:1.7;letter-spacing:.1em;color:rgba(185,199,223,.62)}
   .statement .collage>span{top:calc(4% + 8px)}
 }
 
+/* Fourth archive fragment: inherit the collage's existing entrance and scroll depth. */
+.statement .collage .collage-fragment{
+  position:absolute;left:-8%;top:72%;width:43%;margin:0;padding:5px;
+  z-index:7;background:#080e16;border:1px solid rgba(190,205,226,.48);
+  box-shadow:0 18px 48px rgba(0,0,0,.48),0 0 18px rgba(103,138,184,.06);
+  opacity:0;transform:translate3d(-8px,14px,0) rotate(-3deg);
+  transition:opacity .8s ease .3s,transform 1s var(--ease) .3s,border-color .35s ease;
+}
+.statement .collage.in-view .collage-fragment{opacity:1;transform:rotate(-3deg)}
+.statement .collage .collage-fragment:before{
+  content:"";position:absolute;inset:-4px;pointer-events:none;
+  background:linear-gradient(var(--amber),var(--amber)) left top/11px 1px no-repeat,
+    linear-gradient(var(--amber),var(--amber)) left top/1px 11px no-repeat,
+    linear-gradient(rgba(181,205,235,.6),rgba(181,205,235,.6)) right bottom/11px 1px no-repeat,
+    linear-gradient(rgba(181,205,235,.6),rgba(181,205,235,.6)) right bottom/1px 11px no-repeat;
+  opacity:.65;
+}
+.statement .collage .collage-fragment img{
+  display:block;position:static;width:100%;height:auto;aspect-ratio:1800/1012;
+  object-fit:contain;border:0;box-shadow:none;opacity:1;transform:none;
+  filter:none;transition:none;
+}
+.collage-fragment figcaption{display:flex;justify-content:space-between;gap:8px;padding:7px 2px 2px;font-size:6px;line-height:1.3;letter-spacing:.12em;color:rgba(214,222,234,.8)}
+.statement .collage .collage-fragment figcaption span{position:static;font:inherit;color:inherit;text-shadow:none}
+@media (hover:hover) and (pointer:fine){
+  .statement .collage.in-view .collage-fragment:hover{transform:translateY(-3px) rotate(-2deg);border-color:rgba(222,189,122,.7)}
+  .statement .collage .collage-fragment img:hover{transform:none;filter:none}
+}
+@media (max-width:900px){
+  .statement .collage .collage-fragment{left:0;top:73%;width:42%}
+}
+@media (max-width:600px){
+  .statement .collage .collage-fragment{left:0;top:68%;width:47%;padding:3px;transform:translateY(10px)}
+  .statement .collage.in-view .collage-fragment{transform:none}
+  .collage-fragment figcaption{padding-top:5px;font-size:5px;letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){
+  .statement .collage .collage-fragment{opacity:1;transform:none!important;transition:none}
+}
+
+/* Fifth fragment — a portrait counterweight above the existing image cluster. */
+.statement .collage .collage-portrait{
+  position:absolute;left:0;top:-26%;width:23%;margin:0;padding:4px;z-index:6;
+  background:#100c10;border:1px solid rgba(187,143,143,.5);
+  box-shadow:0 16px 42px rgba(0,0,0,.48);
+  opacity:0;transform:translate3d(6px,12px,0) rotate(3deg);
+  transition:opacity .8s ease .4s,transform 1s var(--ease) .4s,border-color .35s ease;
+}
+.statement .collage.in-view .collage-portrait{opacity:1;transform:rotate(3deg)}
+.statement .collage .collage-portrait:before{
+  content:"";position:absolute;top:-4px;right:-4px;width:12px;height:12px;
+  border-top:1px solid rgba(195,88,80,.8);border-right:1px solid rgba(195,88,80,.8);pointer-events:none;
+}
+.statement .collage .collage-portrait img{
+  display:block;position:static;width:100%;height:auto;aspect-ratio:4/5;
+  object-fit:cover;object-position:52% 50%;border:0;box-shadow:none;
+  opacity:1;transform:none;filter:none;transition:none;
+}
+.collage-portrait figcaption{padding:7px 2px 2px;font-size:6px;line-height:1.3;letter-spacing:.1em;color:rgba(226,198,196,.8)}
+@media (hover:hover) and (pointer:fine){
+  .statement .collage.in-view .collage-portrait:hover{transform:translateY(-3px) rotate(2deg);border-color:rgba(204,126,119,.8)}
+  .statement .collage .collage-portrait img:hover{transform:none;filter:none}
+}
+@media (max-width:900px){
+  .statement .collage .collage-portrait{left:3%;top:-12%;width:23%}
+}
+@media (max-width:600px){
+  .statement .collage .collage-portrait{left:30%;top:-4%;width:30%;padding:3px;transform:translateY(10px)}
+  .statement .collage.in-view .collage-portrait{transform:rotate(2deg)}
+  .collage-portrait figcaption{padding-top:5px;font-size:5px;letter-spacing:.04em}
+}
+@media (prefers-reduced-motion:reduce){
+  .statement .collage .collage-portrait{opacity:1;transform:none!important;transition:none}
+}
+
 /* Hero exposure correction — retain the approved optical-depth motion */
 .hero-image.is-optical-depth{
   filter:saturate(.84) contrast(1.035) brightness(1);
