@@ -147,6 +147,13 @@ const projects = {
   }
 };
 
+projects['scene-stressful'] = {
+  title: 'WHY DOES THIS SCENE FEEL STRESSFUL?', year: 'NOVEMBER 2026', format: 'FILM BREAKDOWN / VIDEO ESSAY', runtime: '00:50', role: 'CONCEPT / PRESENTER / CINEMATOGRAPHER / EDITOR / SOUND DESIGN',
+  image: './assets/images/projects/scene-stressful.jpg',
+  media: [{ id: 'film', label: 'BREAKDOWN', src: videoUrl('why-does-this-scene-feel-stressful-web-4k.mp4'), poster: './assets/images/projects/scene-stressful.jpg', runtime: '00:50' }],
+  description: 'This is my first breakdown video, exploring why a scene from my own work feels stressful. I wanted to branch out into a new kind of video, reach a wider audience, and share more of the thinking behind the finished film. Looking closely at my own choices turned out to be a learning experience in itself: stepping back from the edit helped me better understand how the different elements work together to shape a scene’s emotional impact. It felt rewarding to turn that reflection into something I could share, and I’m looking forward to making more breakdowns as I keep learning.'
+};
+
 const archiveEntries = Object.keys(projects);
 const rows = [...document.querySelectorAll('.project-row')];
 rows.forEach((row, index) => row.style.setProperty('--archive-i', index));
